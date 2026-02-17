@@ -1,0 +1,43 @@
+ CONEXION
+
+def get_connetion():
+    global conn
+    global cur
+    database = 'netflix_oscar.db'
+    netflix_oscar = '/Mi_proyecto/data/sql_lite/netflix_oscar.db'
+    conn = sq3.connect('netflix_oscar.db')
+    cur = conn.cursor
+    return conn, cur
+
+# DESCONEXION
+
+def close_connetion():
+    conn.close()
+    cur.close()
+      
+
+# CONSULTA
+
+def read_database():
+    is_conn = False
+    try:
+        global conn
+        global cur
+        conn = get_connetion()
+        cursor = conn.cursor()
+        cursor.execute('SELECT sqlite_version()') # para la versión de SQL es @@version
+        db_version = cursor.fetchone()
+    except (Exception, sq3.Error) as error:
+        print(f'Houston tenemos problemas: {error}')
+    else:
+        print(f'Estamos conectados en la BBDD {database}... ')
+        print(f'Con la versión de SQLite: {db_version}')
+        is_conn = True
+    finally:
+        if is_conn:
+            close_connetion()
+            print('Se ha cerrado la conexión')
+
+read_database()
+
+

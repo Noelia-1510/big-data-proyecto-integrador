@@ -1,0 +1,39 @@
+# 🎬 Netflix & Oscars: Data Engineering & Analysis
+
+Este proyecto demuestra un flujo completo de trabajo con datos (End-to-End), desde la recolección y limpieza profunda de datos crudos hasta la implementación de un modelo relacional en SQL y visualización de resultados.
+
+---
+
+## 🚀 El Flujo del Proyecto
+
+### 🧹 1. Data Cleaning (El Laboratorio)
+Antes de procesar la información en SQL, realicé una limpieza profunda de los datos en **Google Sheets** para garantizar su calidad:
+* **Automatización**: Implementé `ARRAYFORMULA` para el procesamiento masivo de registros.
+* **Lógica de Negocio**: Clasifiqué géneros mediante `REGEXMATCH` y calculé el **Ratio de Éxito Comercial** (Box Office vs Budget).
+* **Performance**: Categoricé los resultados en niveles (desde "Fracaso" hasta "Genios Totales").
+
+### 🏗️ 2. Modelado y Estructura (SQL)
+Estructuré los datos en tablas relacionadas para evitar duplicados y facilitar las búsquedas de información:
+* **Esquema**: Creación de tablas integradas (`content`, `production`, `oscar`) con claves foráneas para asegurar la integridad referencial.
+* **Validación**: Scripts técnicos para validar registros no nulos y asegurar que la cantidad de columnas fuera la correcta.
+* **Filtros de selección**: Extracción de títulos premiados, filtrado por puntuación de IMDb (> 7.5) y segmentación por idiomas.
+
+### 🐍 3. Conectividad y Notebooks
+* **Python**: Implementación de scripts de conexión para gestionar la base de datos de forma programática.
+* **Deepnote**: Espacio de trabajo en la nube donde documenté y ejecuté el análisis final en formato Notebook (.ipynb).
+
+---
+
+## 🛠️ Stack Tecnológico
+| Herramienta | Uso Principal |
+| :--- | :--- |
+| **SQL (SQLite/MySQL)** | Modelado, integridad referencial y consultas complejas. |
+| **Python** | Scripts de conexión y automatización. |
+| **Google Sheets** | Limpieza de datos (Data Cleaning) y fórmulas avanzadas. |
+| **Deepnote** | Documentación y ejecución de Notebooks colaborativos. |
+
+---
+## 📂 Archivos del Proyecto
+* 📄 [`set_total.csv`] - Dataset final limpio y normalizado.
+* 📄 [`netflix_mod_est.sql`]- Estructura y diseño de la base de datos.
+* 📄 [`tpintegrador_netflix_consigna2.sql`]- Consultas y filtros de datos.

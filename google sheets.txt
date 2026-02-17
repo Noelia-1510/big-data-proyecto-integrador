@@ -1,0 +1,13 @@
+Separar=SPLIT(I2;" ")
+
+Genero=ARRAYFORMULA(SI(REGEXMATCH(R2:R;"ACTOR");"Masculino";SI(REGEXMATCH(R2:R;"ACTRESS");"Femenino";" ")))
+
+Ratio=ARRAYFORMULA(SI.ERROR(Y2:Y/X2:X))
+
+Performance=ARRAYFORMULA(SI(ESBLANCO(Z2);"";SI(Z2<=1;"Fracaso";SI(Z2<=5;"Regular";SI(Z2<=15;"Buena";SI(Z2<=25;"Éxito";SI(Z2<=50;"Exitazo";SI(Z2>50;"Genios Totales"))))))))
+
+=UNIQUE(CONTAR.SI(Data!A2:C;"Movie"))
+
+=UNIQUE(CONTAR.SI(Data!A2:C;"TV Show"))
+
+=SUMA(B2;B3)
